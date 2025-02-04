@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+enum PizzaSize {
+    SMALL, MEDIUM, LARGE, XLARGE
+}
+
+public class Enum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter pizza size: ");
+        String input = scanner.next().toUpperCase();
+
+        if (input.equals("SMALL") || input.equals("MEDIUM") || input.equals("LARGE") || input.equals("XLARGE")) {
+            PizzaSize size = PizzaSize.valueOf(input);
+            System.out.println("You selected: " + size);
+        } else {
+            System.out.println("Invalid size. Please enter a valid pizza size.");
+        }
+    }
+}
+
+/*
+//Proper use of Enum->
+//*/
+
+enum Pizaa{
+    Large, medium, small
+}
+public class Enum{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Pizza Size: ");
+        try{
+            Pizaa p=Pizaa.valueOf(sc.nextLine().toUpperCase());
+            System.out.println("You selected: "+p);
+        }catch(IllegalArgumentException e){
+            System.out.println("Invalid pizza size. Please enter a valid pizza size.");
+        }
+    }
+}
